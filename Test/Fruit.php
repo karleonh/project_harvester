@@ -29,7 +29,7 @@ class Fruit extends TestCase {
     }
 
     public function testAppleWeight(): void {
-        $weight = $this->_mockedApple->weight();
+        $weight    = $this->_mockedApple->weight();
         $minWeight = $this->_mockedApple->minWeight();
         $maxWeight = $this->_mockedApple->maxWeight();
 
@@ -37,7 +37,7 @@ class Fruit extends TestCase {
         $this->assertLessThanOrEqual($maxWeight, $weight);
     }
     public function testPearlWeight(): void {
-        $weight = $this->_mockedPearl->weight();
+        $weight    = $this->_mockedPearl->weight();
         $minWeight = $this->_mockedPearl->minWeight();
         $maxWeight = $this->_mockedPearl->maxWeight();
 

@@ -26,11 +26,11 @@ class Garden extends TestCase {
 
     protected function tearDown(): void {
         $this->_gardenProcessor = null;
-        $this->_mockedGarden = null;
+        $this->_mockedGarden    = null;
     }
 
     public function testGardenFilling(): void {
-        $garden = $this->_mockedGarden;
+        $garden          = $this->_mockedGarden;
         $appleTreesCount = count($garden->appleTrees());
         $pearlTreesCount = count($garden->pearlTrees());
 
