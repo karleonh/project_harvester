@@ -11,6 +11,9 @@ abstract class Base {
         $this->_id = $id;
     }
 
+    /**
+     * @return \Component\Garden\Entity\Fruit\Base[]
+     */
     public function fruits(): array {
         return $this->_fruits;
     }
@@ -25,6 +28,14 @@ abstract class Base {
 
     /** @var \Component\Garden\Entity\Fruit\Base[] $fruits */
     public function setFruits(array $fruits): void {
+        $fruitsCount = count($fruits);
+        if ($fruitsCount < $this->getMaxFruitsAmount()) {
+            // todo: implement
+        }
+        if ($fruitsCount > $this->getMaxFruitsAmount()) {
+            // todo: implement
+        }
+
         $this->_fruits = $fruits;
     }
 
