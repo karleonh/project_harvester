@@ -10,7 +10,7 @@ require_once '..\config.php';
 
 class Fruit extends TestCase {
 
-    private ?Garden\FruitProcessor $_fruitProcessor;
+    private ?Garden\FruitProcessor     $_fruitProcessor;
     private ?Garden\Entity\Fruit\Apple $_mockedApple;
     private ?Garden\Entity\Fruit\Pearl $_mockedPearl;
 
