@@ -8,7 +8,6 @@ class Runner {
         $this->_gardenComponent = new Component\Garden\Facade();
     }
 
-    // business logic unit
     public function run() {
 
         $garden = $this->_gardenComponent->createDefaultGarden();

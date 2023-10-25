@@ -23,6 +23,14 @@ abstract class Base {
         return $this->_treeId;
     }
 
+    public function minWeight(): int {
+        return $this->_minWeight;
+    }
+
+    public function maxWeight(): int {
+        return $this->_maxWeight;
+    }
+
     private function _setWeight(): void {
         $this->_weight = rand($this->_minWeight, $this->_maxWeight);
     }

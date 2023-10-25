@@ -2,9 +2,13 @@
 
 namespace Component\Garden;
 
-use Component\Garden\Entity;
-
 class TreeProcessor {
+
+    private FruitProcessor $_fruitProcessor;
+
+    public function __construct() {
+        $this->_fruitProcessor = new FruitProcessor();
+    }
 
     public function createAppleTrees(int $amount): array {
         $counter = 0;
@@ -27,13 +31,23 @@ class TreeProcessor {
     }
 
     public function createAppleTreeWithFruits(string $treeId): Entity\Tree\Apple {
-        $tree = new Entity\Tree\Apple($treeId);
+        $tree = $this->_createEmptyAppleTree($treeId);
         return $this->_fillTree($tree);
     }
 
     public function createPearlTreeWithFruits(string $treeId): Entity\Tree\Pearl {
-        $tree = new Entity\Tree\Pearl($treeId);
+        $tree = $this->_createEmptyPearlTree($treeId);
         return $this->_fillTree($tree);
+    }
+
+    private function _createEmptyAppleTree(string $treeId): Entity\Tree\Apple {
+        $appleTree = new Entity\Tree\Apple($treeId);
+        return $appleTree;
+    }
+
+    private function _createEmptyPearlTree(string $treeId): Entity\Tree\Pearl {
+        $pearlTree = new Entity\Tree\Pearl($treeId);
+        return $pearlTree;
     }
 
     private function _fillTree(Entity\Tree\Base $tree): Entity\Tree\Base {
@@ -53,9 +67,9 @@ class TreeProcessor {
 
     private function _createFruitByTree(Entity\Tree\Base $tree): Entity\Fruit\Base {
         if ($tree instanceof Entity\Tree\Apple) {
-            return new Entity\Fruit\Apple($tree->id());
+            return $this->_fruitProcessor->createApple($tree->id());
         }
-        return new Entity\Fruit\Pearl($tree->id());
+        return $this->_fruitProcessor->createPearl($tree->id());
     }
 
 }
