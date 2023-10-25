@@ -36,8 +36,8 @@ class Runner {
             $tree->removeFruits();
         }
 
-        $totalWeightApple      = 0;
-        $totalWeightPearl      = 0;
+        $totalWeightApples     = 0;
+        $totalWeightPearls     = 0;
         $totalFruitsCount      = 0;
         $theBiggestAppleWeight = 0;
         $theBiggestAppleTreeId = null;
@@ -47,7 +47,7 @@ class Runner {
             $weight = $apple->weight();
             $treeId = $apple->treeId();
 
-            $totalWeightApple += $weight;
+            $totalWeightApples += $weight;
             $totalFruitsCount++;
 
             if ($weight > $theBiggestAppleWeight) {
@@ -60,15 +60,15 @@ class Runner {
         foreach ($pearlBasket as $pearl) {
             $weight = $pearl->weight();
 
-            $totalWeightPearl += $weight;
+            $totalWeightPearls += $weight;
             $totalFruitsCount++;
         }
 
         print_r("
             Вот, что удалось собрать с сада:
             Всего с {$appleTreesCount} яблонь и {$pearlTreesCount} груш было собрано {$totalFruitsCount} плодов.
-            Общий вес яблок: {$totalWeightApple}
-            Общий вес груш: {$totalWeightPearl}
+            Общий вес яблок: {$totalWeightApples}
+            Общий вес груш: {$totalWeightPearls}
             Самое крупное яблоко весом {$theBiggestAppleWeight} было снято с дерева с id {$theBiggestAppleTreeId}
         ");
 
