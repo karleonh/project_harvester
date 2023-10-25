@@ -1,5 +1,7 @@
 <?php
 
+require_once 'vendor\autoload.php';
+
 class Runner {
 
     private Component\Garden\Facade $_gardenComponent;
@@ -73,8 +75,5 @@ class Runner {
 
 }
 
-spl_autoload_register();
-
-require 'config.php';
 $runner = new Runner();
 $runner->run();
